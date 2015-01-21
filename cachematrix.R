@@ -1,11 +1,19 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
+#The code below takes a matrix as an input 
+#and caches its inverse using the superassignment operator. 
+#For e.g., if the inverse of a given (invertible) matrix has already been computed
+#once, then the inverse is retrieved from the cache 
+#when the user asks for it to be computed again. 
+
+
+
 ## Write a short comment describing this function
 
 #The makeCacheMatrix takes a matrix as its argument and stores its inverse 
 #in the cache (i.e in the containing environment which is global in this case). 
-#It returns a special 'matrix' which is basically a list containing the containing the 
+#It returns a special 'matrix' which is basically a list containing the  
 #functions to get information about the input matrix 'x'.
 
 
@@ -22,10 +30,10 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## Write a short comment describing this function
 
-#The cacheSolve function computes the inverse of its argument (the special 'matrix') using solve() 
-#if the corresponding inverse does not already exist in the cache.
-#If the inverse already exists in the cache, then 
-#  it is retrieved from the cache by the get_inverse function 
+#The cacheSolve function computes the inverse of its argument (the special 'matrix') 
+#using solve() if the corresponding inverse does not already exist 
+#in the cache. If the inverse already exists in the cache, then 
+#it is retrieved from the cache by the get_inverse function 
 # with an appropriate message.
 
 cacheSolve <- function(x, ...) {
