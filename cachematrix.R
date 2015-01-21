@@ -4,7 +4,7 @@
 ## Write a short comment describing this function
 
 #The makeCacheMatrix takes a matrix as its argument and stores its inverse 
-#in the cache (i.e in the containing environement which is global in this case). 
+#in the cache (i.e in the containing environment which is global in this case). 
 #It returns a special 'matrix' which is basically a list containing the containing the 
 #functions to get information about the input matrix 'x'.
 
