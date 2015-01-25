@@ -14,17 +14,24 @@
 #The makeCacheMatrix takes a matrix as its argument and stores its inverse 
 #in the cache (i.e in the containing environment which is global in this case). 
 #It returns a special 'matrix' which is basically a list containing the  
-#functions to get information about the input matrix 'x'.
+#functions to get information about the input matrix 'x'. 
+# It is understood that if the input matrix needs to be changed, 
+#it can be done only via the 'set' function which then 
+#clears the cache and computes the inverse afresh.
 
 
 makeCacheMatrix <- function(x = matrix()) {
   inv_cache<-NULL
+  set_matrix<-function(y){
+    x<<-y
+    inv_cache<<-NULL
+  }
   get_matrix<-function() x
   set_inverse<-function(inverse){
     inv_cache<<-inverse
   }
   get_inverse <- function() inv_cache
-  list( get_matrix = get_matrix, set_inverse = set_inverse, get_inverse = get_inverse)
+  list( set_matrix = set_matrix, get_matrix = get_matrix, set_inverse = set_inverse, get_inverse = get_inverse)
 }
 
 
